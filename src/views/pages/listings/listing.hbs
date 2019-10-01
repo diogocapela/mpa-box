@@ -1,0 +1,31 @@
+<h1>{{listing.title}}</h1>
+<hr />
+
+<div class="row">
+    <div class="col-lg-6">
+        <h5><b>Address</b></h5>
+        <p>{{listing.address}}</p>
+        <h5><b>Description</b></h5>
+        <p>{{listing.description}}</p>
+        <h5><b>Price</b></h5>
+        <p>{{listing.price}} {{listing.currency}}</p>
+        <h5><b>Phone Number</b></h5>
+        <p>{{listing.phoneNumber}}</p>
+        <h5><b>Owner</b></h5>
+        <p><a href="/user/{{listing.owner.username}}">@{{listing.owner.username}}</a></p>
+        <h5><b>Coordinates</b></h5>
+        <ul>
+            {{#each listing.coordinates}}
+            <li><b>Lat:</b> {{lat}}<br /><b>Lng:</b> {{lng}}</li>
+            <br />
+            {{/each}}
+        </ul>
+    </div>
+    <div class="col-lg-6">
+        {{> 'google-map/google-map'
+            coordinates=listing.coordinates
+        }}
+        <br />
+        <img class="img-fluid" src="{{listing.satelliteImageUrl}}" alt="{{listing.title}}">
+    </div>
+</div>

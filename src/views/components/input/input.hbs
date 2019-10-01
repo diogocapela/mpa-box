@@ -1,0 +1,41 @@
+<!-- 
+    FONT MATTER:
+
+    type:               string - R (text, email, password, number, checkbox, color, date, range, etc...)
+    uniqueID:           string - R
+    
+    name:               string
+    size:               string (sm, md, lg)
+
+    required: boolean
+    disabled: boolean
+    readonly: boolean
+    value: string
+    label: string
+    placeholder: string
+-->
+
+<div class="__input">
+    {{#if label}}
+    <label for="{{uniqueID}}">{{label}}</label>
+    {{/if}}
+
+    <div class="input-group">
+        <input
+            class="
+                form-control
+                {{#if size}}form-control-{{size}}{{/if}}
+            "
+            {{#if type}}type="{{type}}"{{/if}}
+            {{#if name}}name="{{name}}"{{/if}}
+            {{#if uniqueID}}id="{{uniqueID}}"{{/if}}
+            {{#if placeholder}}placeholder="{{placeholder}}"{{/if}}
+            {{#if placeholder}}aria-label="{{placeholder}}"{{/if}}
+            {{#if value}}value="{{value}}"{{/if}}
+            {{#if required}}required{{/if}}
+            {{#if disabled}}disabled{{/if}}
+            {{#if readonly}}readonly{{/if}} />
+
+            {{#if helpText}}<small class="form-text text-muted">{{{helpText}}}</small>{{/if}}
+    </div>
+</div>

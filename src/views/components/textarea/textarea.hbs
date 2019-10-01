@@ -1,0 +1,48 @@
+
+
+<!-- 
+    FONT MATTER:
+
+    uniqueID:           string
+
+    name:               string
+    rows:               number
+    size:               string (sm, md, lg)
+
+    required:           boolean
+    disabled:           boolean
+    readonly:           boolean
+    value:              string
+    label:              string
+    placeholder:        string
+-->
+
+<div class="__textarea">
+
+    {{#if label}}
+    <label 
+        {{#if uniqueID}}for="{{uniqueID}}"{{/if}}
+    >{{label}}</label>
+    {{/if}}
+
+    <div class="input-group">
+
+        <textarea   
+            class="
+                form-control
+                {{#if size}}form-control-{{size}}{{/if}}
+            "
+            {{#if name}}name="{{name}}"{{/if}}
+            {{#if uniqueID}}id="{{uniqueID}}"{{/if}}
+            {{#if rows}}rows="{{rows}}"{{/if}}
+            {{#if placeholder}}placeholder="{{placeholder}}"{{/if}}
+            {{#if placeholder}}aria-label="{{placeholder}}"{{/if}}
+            {{#if required}}required{{/if}}
+            {{#if disabled}}disabled{{/if}}
+            {{#if readonly}}readonly{{/if}}
+        >{{#if value}}{{value}}{{/if}}</textarea>
+
+
+    </div>
+
+</div>

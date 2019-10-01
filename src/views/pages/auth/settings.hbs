@@ -1,0 +1,107 @@
+<div class="row">
+    <div class="col-lg-3">
+        <div class="list-group mb-4" role="tablist">
+            <a class="list-group-item list-group-item-action {{#ifEquals page '/settings/update-profile'}}active{{/ifEquals}}" id="update-profile-list" data-toggle="list"
+                href="#update-profile" role="tab" aria-controls="update-profile">Update Profile</a>
+            <a class="list-group-item list-group-item-action {{#ifEquals page '/settings/update-password'}}active{{/ifEquals}}" id="update-password-list" data-toggle="list"
+                href="#update-password" role="tab" aria-controls="update-password">Update Password</a>
+            <a class="list-group-item list-group-item-action {{#ifEquals page '/settings/delete-account'}}active{{/ifEquals}}" id="delete-account-list" data-toggle="list"
+                href="#delete-account" role="tab" aria-controls="delete-account">Delete Account</a>
+        </div>
+    </div>
+    <div class="col-lg-9">
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="update-profile" role="tabpanel"
+                aria-labelledby="update-profile-list">
+                <h4>Update Profile</h4>
+                <hr />
+                <div class="row">
+                    <div class="col-lg-6">
+                        <small class="form-text text-muted mb-3">
+                            {{#ifEquals loggedUser.verifiedEmail true}}
+                            Email is verified.
+                            {{/ifEquals}}
+
+                            {{#ifEquals loggedUser.verifiedEmail false}}
+                            Email is <b>not</b> verified. <a href="/resend-verification-email"><b>Re-send verification email</b></a>.
+                            {{/ifEquals}}
+                        </small>
+                        <form method="POST" action="/settings/update-profile">
+                            {{> 'input/input'
+                                label='Username'
+                                type='text'
+                                uniqueID='username'
+                                name='username'
+                                required='true'
+                                disabled='true'
+                                value=loggedUser.username
+                            }}
+                            {{> 'input/input'
+                                label='Email'
+                                type='email'
+                                uniqueID='email'
+                                name='email'
+                                required='true'
+                                disabled='true'
+                                value=loggedUser.email
+                            }}
+                            {{> 'input/input'
+                                label='Name'
+                                type='text'
+                                uniqueID='name'
+                                name='name'
+                                value=loggedUser.name
+                            }}
+                            {{> 'textarea/textarea'
+                                label='Bio'
+                                uniqueID='bio'
+                                name='bio'
+                                value=loggedUser.bio
+                            }}
+                            <button type="submit" class="btn btn-primary">Update Profile</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="update-password" role="tabpanel" aria-labelledby="update-password-list">
+                <h4>Update Password</h4>
+                <hr />
+                <div class="row">
+                    <div class="col-lg-6">
+                        <form method="POST" action="/settings/update-password">
+                            {{> 'input/input'
+                                label='Old Password'
+                                type='password'
+                                uniqueID='oldPassword'
+                                name='oldPassword'
+                                required='true'
+                            }}
+                            {{> 'input/input'
+                                label='New Password'
+                                type='password'
+                                uniqueID='newPassword'
+                                name='newPassword'
+                                required='true'
+                            }}
+                            {{> 'input/input'
+                                label='New Password Confirmation'
+                                type='password'
+                                uniqueID='passwordConfirmation'
+                                name='passwordConfirmation'
+                                required='true'
+                            }}
+                            <button type="submit" class="btn btn-primary">Update Password</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="delete-account" role="tabpanel" aria-labelledby="delete-account-list">
+                <h4>Delete Account</h4>
+                <hr />
+                <form method="POST" action="/settings/delete-account">
+                    <button type="submit" class="btn btn-danger">Delete Account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

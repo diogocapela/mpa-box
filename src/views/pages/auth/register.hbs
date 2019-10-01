@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-lg-6">
+        <h4>Register</h4>
+        <hr />
+        <form method="POST" action="/register">
+            {{> 'input/input'
+                label='Email'
+                type='email'
+                uniqueID='email'
+                name='email'
+                required='true'
+            }}
+            {{> 'input/input'
+                label='Username'
+                type='text'
+                uniqueID='username'
+                name='username'
+                required='true'
+            }}
+            {{> 'input/input'
+                label='Password'
+                type='password'
+                uniqueID='password'
+                name='password'
+                required='true'
+            }}
+            {{> 'input/input'
+                label='Password Confirmation'
+                type='password'
+                uniqueID='passwordConfirmation'
+                name='passwordConfirmation'
+                required='true'
+            }}
+            {{> 'input/input'
+                label='Name'
+                type='text'
+                uniqueID='name'
+                name='name'
+            }}
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+        <br />
+        <a href="/recover-password">Forgot Password?</a>
+        <br />
+        <a href="/login">Already have an account? Login!</a>
+    </div>
+</div>

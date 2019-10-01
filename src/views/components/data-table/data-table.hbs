@@ -1,0 +1,93 @@
+
+<!--
+    FRONT MATTER:
+
+    routeTo
+    header
+    list
+-->
+
+<div class="card mb-3">
+    <div class="card-header"><i class="fas fa-fw fa-table"></i> {{header}}</div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        {{#if withUsername}}<th>{{@root.lang.links.username}}</th>{{/if}}
+                        {{#if withSlug}}<th><a>{{@root.lang.links.slug}}</a></th>{{/if}}
+                        {{#if withTitle}}<th>{{@root.lang.links.title}}</th>{{/if}}
+                        {{#if withPrimaryImage}}<th>{{@root.lang.links.primaryImage}}</th>{{/if}}
+                        {{#if withDate}}<th>{{@root.lang.links.date}}</th>{{/if}}
+                        {{#if withCategory}}<th>{{@root.lang.links.category}}</th>{{/if}}
+                        {{#if withCreatedAt}}<th>createdAt</th>{{/if}}
+                        {{#if withUpdatedAt}}<th>updatedAt</th>{{/if}}
+                        {{#if withDescription}}<th>{{@root.lang.links.description}}</th>{{/if}}
+                        {{#if withEmail}}<th>{{@root.lang.links.email}}</th>{{/if}}
+                        {{#if withMessages}}<th>{{@root.lang.links.messages}}</th>{{/if}}
+                        {{#if withName}}<th>{{@root.lang.links.name}}</th>{{/if}}
+                        {{#if withPassword}}<th>{{@root.lang.links.password}}</th>{{/if}}
+                        {{#if withPhone}}<th>{{@root.lang.links.phone}}</th>{{/if}}
+                        {{#if withPrice}}<th>{{@root.lang.links.price}}</th>{{/if}}
+                        {{#if withRole}}<th>{{@root.lang.links.role}}</th>{{/if}}
+                        {{#if withTimestamp}}<th>Timestamp</th>{{/if}}
+                        {{#if withURL}}<th>URL</th>{{/if}}
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each list}}
+                    <tr>
+                        {{#if ../withSlug}}
+                            <td>
+                                {{#if ../withSlug}}
+                                    <a href="/{{../routeTo}}/edit/{{slug}}">{{slug}}</a>
+                                {{else}}
+                                    {{slug}}
+                                {{/if}}
+                            </td>
+                        {{/if}}
+                        {{#if ../withTitle}}
+                            <td>
+                                {{#if ../withTitle}}
+                                    <a href="/{{../routeTo}}/edit/{{slug}}">{{title}}</a>
+                                {{else}}
+                                    {{title}}
+                                {{/if}}
+                            </td>
+                        {{/if}}
+                        {{#if ../withUsername}}
+                            <td>
+                                {{#if ../withUsername}}
+                                    <a href="/{{../routeTo}}/edit/{{slug}}">{{username}}</a>
+                                {{else}}
+                                    {{username}}
+                                {{/if}}
+                            </td>
+                        {{/if}}
+                        {{#if ../withPrimaryImage}}
+                        <td>
+                            <img class="img-fluid" src="{{primaryImage}}" />
+                        </td>
+                        {{/if}}
+                        {{#if ../withDate}}<td>{{date}}</td>{{/if}}
+                        {{#if ../withCategory}}<td>{{category}}</td>{{/if}}
+                        {{#if ../withCreatedAt}}<td>{{createdAt}}</td>{{/if}}
+                        {{#if ../withUpdatedAt}}<td>{{updatedAt}}</td>{{/if}}
+                        {{#if ../withDescription}}<td>{{description}}</td>{{/if}}
+                        {{#if ../withEmail}}<td><a href="mailto:{{email}}">{{email}}</a></td>{{/if}}
+                        {{#if ../withMessages}}<td>{{messages}}</td>{{/if}}
+                        {{#if ../withName}}<td>{{name}}</td>{{/if}}
+                        {{#if ../withPassword}}<td>{{password}}</td>{{/if}}
+                        {{#if ../withPhone}}<td>{{phone}}</td>{{/if}}
+                        {{#if ../withPrice}}<td>{{price}}</td>{{/if}}
+                        {{#if ../withRole}}<td>{{role}}</td>{{/if}}
+                        {{#if ../withTimestamp}}<td>{{timestamp}}</td>{{/if}}
+                        {{#if ../withURL}}<td>{{url}}</td>{{/if}}
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card-footer small text-muted">Export data in CSV format.</div>
+</div>

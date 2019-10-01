@@ -1,0 +1,19 @@
+{{> head}}
+
+{{> 'navbar/navbar'}}
+
+<div class="container">
+
+    {{#ifEquals loggedUser.verifiedEmail false}}
+    {{> 'alert/alert' type='danger' text='Email address is <b>not</b> verified. Check your email inbox.'}}
+    {{/ifEquals}}
+
+    {{#if alert}}
+    {{> 'alert/alert' type=alert.type text=alert.text}}
+    {{/if}}
+
+    {{{body}}}
+
+</div>
+
+{{> foot}}

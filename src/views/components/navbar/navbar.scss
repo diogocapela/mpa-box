@@ -1,0 +1,11 @@
+.__navbar {
+    margin-bottom: 1rem;
+
+    .navbar-brand {
+        font-weight: bold;
+    }
+
+    .dropdown-toggle::after {
+        display:none;
+    }
+}

@@ -1,0 +1,16 @@
+@import 'variables';
+
+@import '../views/components/alert/alert.scss';
+@import '../views/components/data-table/data-table.scss';
+@import '../views/components/date-picker/date-picker.scss';
+@import '../views/components/footer/footer.scss';
+@import '../views/components/google-map/google-map.scss';
+@import '../views/components/input/input.scss';
+@import '../views/components/logger/logger.scss';
+@import '../views/components/navbar/navbar.scss';
+@import '../views/components/quill-editor/quill-editor.scss';
+@import '../views/components/textarea/textarea.scss';
+
+.card {
+    margin-bottom: 2rem;
+}

@@ -1,0 +1,28 @@
+<h1>Listings</h1>
+<hr />
+<div class="row">
+
+    <div class="col-lg-4">
+    {{#each listings}}
+
+        <div class="card">
+            <a href="/listing/{{slug}}">
+                <img class="card-img-top" src="{{satelliteImageUrl}}" alt="{{title}}">
+            </a>
+            <div class="card-body">
+                <h5 class="card-title">{{title}}</h5>
+                <p class="card-text">{{description}}</p>
+                <a href="/listing/{{slug}}" class="btn btn-primary">View Listing</a>
+            </div>
+        </div>
+
+    {{/each}}
+
+    </div>
+
+    <div class="col-lg-8">
+    {{> 'google-map/google-map'
+        listings=listings
+    }}
+    </div>
+</div>

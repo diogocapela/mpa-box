@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-lg-6">
+        <h4>Login</h4>
+        <hr />
+        <form method="POST" action="/login">
+            {{> 'input/input'
+                label='Username or email address'
+                type='text'
+                uniqueID='login'
+                name='login'
+                required='true'
+            }}
+            {{> 'input/input'
+                label='Password'
+                type='password'
+                uniqueID='password'
+                name='password'
+                required='true'
+            }}
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+        <br />
+        <a href="/recover-password">Forgot Password?</a>
+        <br />
+        <a href="/register">Create an Account!</a>
+    </div>
+</div>

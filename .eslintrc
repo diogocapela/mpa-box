@@ -1,0 +1,23 @@
+{
+    "root": true,
+    "extends": [
+        "airbnb-base",
+        "prettier"
+    ],
+    "plugins": ["prettier"],
+    "rules": {
+        "prettier/prettier": "error",
+        "no-plusplus": 0,
+        "indent": 0,
+        "max-len": [ "error", 200, 2, {
+                "ignoreUrls": true,
+                "ignoreComments": false,
+                "ignoreRegExpLiterals": true,
+                "ignoreStrings": false,
+                "ignoreTemplateLiterals": false
+            }
+        ],
+        "no-underscore-dangle": 0,
+        "object-curly-newline": 0
+    }
+}

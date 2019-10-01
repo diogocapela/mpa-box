@@ -1,0 +1,36 @@
+<!--
+    FRONT MATTER:
+
+    {{label}}: string
+    {{name}}: string
+    {{value}}: string
+    {{placeholder}}: string
+    {{size}}: string (sm, md, lg)
+    {{required}}: boolean
+    {{disabled}}: boolean
+    {{readonly}}: boolean
+-->
+
+<div class="__datepicker">
+
+    {{#if label}}
+    <label for="__datepicker">{{label}}{{#if required}} (required){{/if}}</label>
+    {{/if}}
+
+    <div class="input-group">
+        <input
+            class="
+                form-control
+                {{#if size}}form-control-{{size}}{{/if}}
+            "
+            {{#if name}}name="{{name}}"{{/if}}
+            {{#if value}}value="{{value}}"{{/if}}
+            type="text"
+            id="__datepicker"
+            {{#if placeholder}}placeholder="{{placeholder}}"{{/if}}
+            {{#if required}}required{{/if}}
+            {{#if disabled}}disabled{{/if}}
+            {{#if readonly}}readonly{{/if}} />
+    </div>
+
+</div>

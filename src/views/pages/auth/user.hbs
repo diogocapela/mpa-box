@@ -1,0 +1,18 @@
+<h1><b>@{{user.username}}</b>'s Listings</h1>
+<hr />
+<div class="row">
+    {{#each userListings}}
+    <div class="col-lg-6">
+        <div class="card">
+            <a href="/listing/{{slug}}">
+                <img class="card-img-top" src="{{satelliteImageUrl}}" alt="{{title}}">
+            </a>
+            <div class="card-body">
+                <h5 class="card-title">{{title}}</h5>
+                <p class="card-text">{{description}}</p>
+                <a href="/listing/{{slug}}" class="btn btn-primary">View Listing</a>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>

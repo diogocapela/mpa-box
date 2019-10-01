@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-lg-6">
+        <h4>Add Listing</h4>
+        <hr />
+        <form method="POST" action="/add-listing">
+            {{> 'input/input'
+                label='Title'
+                type='text'
+                uniqueID='title'
+                name='title'
+                required='true'
+            }}
+            {{> 'input/input'
+                label='Address'
+                type='text'
+                uniqueID='address'
+                name='address'
+                required='true'
+            }}
+            {{> 'textarea/textarea'
+                label='Description'
+                uniqueID='description'
+                name='description'
+            }}
+            {{> 'input/input'
+                label='Price'
+                type='number'
+                uniqueID='price'
+                name='price'
+                required='true'
+            }}
+            {{> 'input/input'
+                label='Phone Number'
+                type='number'
+                uniqueID='phoneNumber'
+                name='phoneNumber'
+            }}
+            {{> 'textarea/textarea'
+                label='Coordinates'
+                uniqueID='coordinates'
+                name='coordinates'
+            }}
+            <button type="submit" class="btn btn-primary">Add Listing</button>
+        </form>
+    </div>
+    <div class="col-lg-6">
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3004.290757909825!2d-8.604361884849896!3d41.15000641864062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2464f1d503d3bb%3A0xc66f194945576fe0!2sR.+de+Dom+Jo%C3%A3o+IV+501-279%2C+4000-298+Porto!5e0!3m2!1spt-PT!2spt!4v1561048670085!5m2!1spt-PT!2spt"
+                frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
